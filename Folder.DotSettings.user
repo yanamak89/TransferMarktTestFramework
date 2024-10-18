@@ -4,5 +4,6 @@
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.HomePageTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.SearchPageTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.NavigationPageTests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.LoginPageTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
