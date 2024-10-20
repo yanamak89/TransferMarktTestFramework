@@ -4,7 +4,6 @@ using TransferMarktTestFramework.Utilities;
 
 namespace TransferMarktTestFramework.Pages;
 
-
 public class HomePage
 {
     private readonly IPage _page;

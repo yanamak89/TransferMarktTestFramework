@@ -25,7 +25,6 @@ namespace TransferMarktTestFramework.Tests
                 await _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
                 Log.Information("Page has fully loaded.");
 
-                // Use CSS selector instead of XPath
                 var premierLeagueTableSelector = "a[href*='premier-league'].direct-headline__link";
 
                 await _page.WaitForSelectorAsync(premierLeagueTableSelector, new PageWaitForSelectorOptions

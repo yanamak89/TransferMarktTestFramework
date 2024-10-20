@@ -1,6 +1,5 @@
 using Microsoft.Playwright;
 using NUnit.Framework;
-using System.IO;
 using Newtonsoft.Json;
 using Serilog;
 using TransferMarktTestFramework.Utilities;
