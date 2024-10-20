@@ -90,6 +90,7 @@ TransferMarktTestFramework/
 │   ├── LoginPage.cs                 # Page Object for login form
 │
 ├── Tests/
+│   ├── BaseTest                     # Base test class with common setup and teardown
 │   ├── HomePageTests.cs             # Tests for Premier League Table visibility
 │   ├── SearchPageTests.cs           # Tests for search functionality
 │   ├── NavigationPageTests.cs       # Tests for navigation between pages
@@ -97,12 +98,14 @@ TransferMarktTestFramework/
 │   ├── ApiTests.cs                  # Tests for monitoring API requests
 │
 ├── Utilities/
-│   ├── Logger.cs                    # Logging utility for detailed test steps
-│   ├── PageUtilities.cs             # Utility methods for common actions
+│   ├── AppSettings.cs               # Application settings class
+│   ├── appsettings.json             # Configuration file for application settings
+│   ├── ConfigLoader.cs              # Utility to load configuration settings
+│   ├── Credentials.cs               # Class for managing user credentials
+│   ├── credentials.json             # File containing user credentials
+│   ├── HttpStatusCode.cs            # Utility for handling HTTP status codes
 │
-├── TestBase.cs                       # Base test setup and teardown
-├── PageFactory.cs                    # Factory for initializing page objects
-├── appsettings.json                  # Configuration file
+├── .gitignore
 └── README.md                         # Project documentation
 ```
 
