@@ -1,6 +1,7 @@
 using Microsoft.Playwright;
+using Serilog;
 
-namespace TransferMarktTestFramework.Tests;
+namespace TransferMarktTestFramework.Pages;
 
 public class NavigationPage
 {
@@ -13,13 +14,58 @@ public class NavigationPage
 
     public async Task NavigateToSection(string sectionName)
     {
-        var selector = $"//a[contains(text(),'{sectionName}')]";
-        await _page.ClickAsync(selector);
-    }
+        string href = sectionName switch
+        {
+            "Discover" => "/",
+            "Transfers & Rumours" => "/navigation/transfersundgeruechte",
+            "Market Values" => "/navigation/marktwerte",
+            "Competitions" => "/navigation/wettbewerbe",
+            "Statistics" => "/navigation/statistiken",
+            "Community" => "/navigation/community",
+            "Gaming" => "/navigation/gaming",
+            _ => throw new ArgumentException("Invalid section name")
+        };
 
+        var linkLocator = sectionName switch
+        {
+            "Discover" => _page.GetByRole(AriaRole.Link, new() { Name = "Discover", Exact = true }),
+            _ => _page.Locator($"a[href='{href}']")
+        };
+
+        await linkLocator.WaitForAsync();
+        await linkLocator.ClickAsync();
+    }
+    
     public async Task<bool> IsSectionVisible(string sectionName)
     {
-        var selector = $"//a[contains(text(), '{sectionName}')]";
-        return await _page.Locator(selector).IsVisibleAsync();
+        string href = sectionName switch
+        {
+            "Discover" => "/",
+            "Transfers & Rumours" => "/navigation/transfersundgeruechte",
+            "Market Values" => "/navigation/marktwerte",
+            "Competitions" => "/navigation/wettbewerbe",
+            "Statistics" => "/navigation/statistiken",
+            "Community" => "/navigation/community",
+            "Gaming" => "/navigation/gaming",
+            _ => throw new ArgumentException("Invalid section name")
+        };
+
+        var linkLocator = sectionName switch
+        {
+            "Discover" => _page.GetByRole(AriaRole.Link, new() { Name = "Discover", Exact = true }),
+            _ => _page.Locator($"a[href='{href}']")
+        };
+
+        try
+        {
+            await linkLocator.WaitForAsync();
+        }
+        catch (Exception ex)
+        {
+            Log.Error($"Error waiting for element: {ex.Message}");
+        }
+
+        bool isVisible = await linkLocator.IsVisibleAsync();
+        return isVisible;
     }
 }

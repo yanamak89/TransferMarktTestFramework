@@ -1,10 +1,23 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c64f7df0_002De267_002D498e_002Dacfd_002Dde62d9308cdf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="HomePageTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ATimeoutException_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fb2a24fae49e3687f3586446c423e6d5dc86976d67c4cc673bf72835ff287c43f_003FTimeoutException_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=582d1da9_002Dd4fb_002D4842_002Da2b5_002De625da9da329/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="HomePageTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;ProjectFolder&gt;3EBFA9A1-12F2-7A97-E819-68FB963F6AF9/d:Tests&lt;/ProjectFolder&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8ac37c83_002De082_002D4dff_002D9719_002D785d3e9acedf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SearchPageTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;ProjectFolder&gt;3EBFA9A1-12F2-7A97-E819-68FB963F6AF9/d:Tests&lt;/ProjectFolder&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b814649b_002Db9fc_002D4f4e_002Daa08_002Daffe58ba8481/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="LoginPageTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.LoginPageTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c64f7df0_002De267_002D498e_002Dacfd_002Dde62d9308cdf/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="HomePageTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.HomePageTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.SearchPageTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.NavigationPageTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.LoginPageTests&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.ApiTests.No500ErrorInApiRequests&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::3EBFA9A1-12F2-7A97-E819-68FB963F6AF9::net8.0::TransferMarktTestFramework.Tests.ApiTests&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
