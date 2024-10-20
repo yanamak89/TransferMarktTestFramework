@@ -9,6 +9,10 @@ public class HomePage
     private readonly IPage _page;
 
     private readonly AppSettings _settings;
+    
+    private const string PremierLeagueTableSelector = "a[href*='premier-league'].direct-headline__link";
+    public string PremierLeagueTableSelectorPublic => PremierLeagueTableSelector;
+
     public HomePage(IPage page, AppSettings settings)
     {
         _page = page;
@@ -28,7 +32,7 @@ public class HomePage
             await _page.WaitForSelectorAsync(premierLeagueTableSelector, new PageWaitForSelectorOptions
             {
                 State = WaitForSelectorState.Visible,
-                Timeout = 60000 // Increase timeout if necessary
+                Timeout = 60000 
             });
 
             return await _page.Locator(premierLeagueTableSelector).IsVisibleAsync();
