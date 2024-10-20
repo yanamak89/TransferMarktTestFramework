@@ -5,7 +5,7 @@ using TransferMarktTestFramework.Utilities;
 
 namespace TransferMarktTestFramework.Tests
 {
-    public class ApiTests : BaseTest
+    public class ApiTest : BaseTest
     {
         [Test]
         public async Task No500ErrorInApiRequests()
