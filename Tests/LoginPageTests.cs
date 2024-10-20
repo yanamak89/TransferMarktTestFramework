@@ -15,7 +15,9 @@ public class LoginPageTests : BaseTest
     public async Task SetUp()
     {
         _loginPage = new LoginPage(_page);
+        _credentials = ConfigLoader.LoadCredentials("credentials.json"); 
         await _loginPage.NavigateToLoginPage(_settings.BaseUrl);
+        
     }
     
     [Test]
@@ -26,21 +28,19 @@ public class LoginPageTests : BaseTest
         await _loginPage.WaitForLoginForm(); 
         Assert.That(await _loginPage.IsLoginFormVisible(), Is.True, "Login form should be visible.");
         Log.Information("Login form is visible.");
+        
+        await _loginPage.PerformLogin(_credentials.Username, _credentials.Password);
 
-        var username = "YanaMakogon"; 
-        var password = "Pass1234+"; 
-        await _loginPage.PerformLogin(username, password);
-
-        await _page.WaitForSelectorAsync($"//h2[contains(@class, 'content-box-headline') and contains(., '{username}')]", new PageWaitForSelectorOptions
+        await _page.WaitForSelectorAsync($"//h2[contains(@class, 'content-box-headline') and contains(., '{_credentials.Username}')]", new PageWaitForSelectorOptions
         {
             State = WaitForSelectorState.Visible,
             Timeout = 10000 
         });
 
-        var confirmationHeadline = await _page.Locator($"//h2[contains(@class, 'content-box-headline') and contains(., '{username}')]").InnerTextAsync();
-        Assert.That(confirmationHeadline.Trim(), Is.EqualTo(username).IgnoreCase, "Confirmation message should match the logged-in username.");
+        var confirmationHeadline = await _page.Locator($"//h2[contains(@class, 'content-box-headline') and contains(., '{_credentials.Username}')]").InnerTextAsync();
+        Assert.That(confirmationHeadline.Trim(), Is.EqualTo(_credentials.Username).IgnoreCase, "Confirmation message should match the logged-in username.");
 
-        Log.Information("Login process completed successfully for user: {Username}", username);
+        Log.Information("Login process completed successfully for user: {Username}", _credentials.Username);
     }
 
 

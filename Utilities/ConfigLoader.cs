@@ -6,7 +6,7 @@ public class ConfigLoader
 {
     public static Credentials LoadCredentials(string filePath)
     {
-        string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath);
+        var fullPath = Path.Combine(Directory.GetCurrentDirectory(), "Utilities", "credentials.json");
         Log.Information("Loading credentials from: {FullPath}", fullPath);
         
         if (!File.Exists(fullPath))

@@ -27,25 +27,25 @@ public class BaseTest
         Log.Information("Setting up the test environment.");
         LoadConfiguration();
         _playwright = await Playwright.CreateAsync();
-        _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });
-        
+
         _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions 
         { 
-            Headless = true,
-            Args = new[] { "--start-fullscreen" }, // Add this line for full-screen mode
+            Headless = _settings.HeadlessMode, 
+            Args = new[] { "--start-fullscreen" }, 
         });
-        
+    
         _page = await _browser.NewPageAsync();
         await _page.GotoAsync(_settings.BaseUrl);
-        
+    
         await _page.WaitForLoadStateAsync(LoadState.NetworkIdle);
-        
+    
         await _page.PressAsync("body", "Tab");
         await _page.PressAsync("body", "Enter");
-        
+    
         await HandleDialog();
         Log.Information("Test environment setup complete.");
     }
+
 
     private void LoadConfiguration()
     {
