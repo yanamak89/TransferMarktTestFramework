@@ -86,4 +86,23 @@ public class LoginPage
         });
         Log.Information("Waited for login form to be visible.");
     }
+    
+    public async Task<bool> IsRememberMeChecked()
+    {
+        var checkboxLocator = _page.Locator(RememberMeCheckboxLocator);
+        bool isChecked = await checkboxLocator.IsCheckedAsync();
+        Log.Information("Remember Me checkbox checked state: {IsChecked}", isChecked);
+        return isChecked;
+    }
+
+    public async Task ToggleRememberMeCheckbox()
+    {
+        var checkboxLocator = _page.Locator(RememberMeCheckboxLocator);
+        if (await checkboxLocator.IsVisibleAsync())
+        {
+            await checkboxLocator.ClickAsync(); 
+            Log.Information("Toggled Remember Me checkbox.");
+        }
+    }
+
 }

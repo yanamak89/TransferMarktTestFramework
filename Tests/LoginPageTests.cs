@@ -16,7 +16,6 @@ public class LoginPageTests : BaseTest
     {
         _loginPage = new LoginPage(_page);
         await _loginPage.NavigateToLoginPage(_settings.BaseUrl);
-        
     }
     
     [Test]
@@ -68,4 +67,29 @@ public class LoginPageTests : BaseTest
         Assert.That(isErrorVisible, Is.True, "Error message should be visible for invalid credentials.");
         Log.Information("Error message visibility checked: {IsErrorVisible}", isErrorVisible);
     }
+    
+    
+    [Test]
+    public async Task RememberMeCheckboxTest()
+    {
+        Log.Information("Starting Remember Me Checkbox Test.");
+
+        await _loginPage.WaitForLoginForm();
+        Assert.That(await _loginPage.IsLoginFormVisible(), Is.True, "Login form should be visible.");
+        Log.Information("Login form is visible.");
+
+        // Check the initial state of the checkbox
+        bool initialState = await _loginPage.IsRememberMeChecked();
+        Assert.That(initialState, Is.False, "Remember Me checkbox should be initially unchecked.");
+
+        // Toggle the checkbox
+        await _loginPage.ToggleRememberMeCheckbox();
+
+        // Check the state after toggling
+        bool newState = await _loginPage.IsRememberMeChecked();
+        Assert.That(newState, Is.True, "Remember Me checkbox should be checked after toggling.");
+
+        Log.Information("Remember Me Checkbox Test completed successfully.");
+    }
+
 }
