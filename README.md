@@ -51,7 +51,7 @@ This test automation framework includes:
    ```json
    {
        "BaseUrl": "https://www.transfermarkt.com/",
-       "HeadlessMode": true
+       "HeadlessMode": true // Change to false if you want to see the browser
    }
    ```
 
