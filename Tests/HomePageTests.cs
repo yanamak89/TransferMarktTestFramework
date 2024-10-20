@@ -18,8 +18,6 @@ namespace TransferMarktTestFramework.Tests
         [Test]
         public async Task PremierLeagueTableIsVisible()
         {
-            try
-            {
                 Log.Information("Starting test: PremierLeagueTableIsVisible");
 
                 await _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
@@ -46,17 +44,6 @@ namespace TransferMarktTestFramework.Tests
 
                 Assert.That(isVisible, Is.True, "Premier League table should be visible on the home page.");
                 Log.Information("Test completed successfully: Premier League table is visible.");
-            }
-            catch (TimeoutException ex)
-            {
-                Log.Error($"Timeout exception: {ex.Message}");
-                throw; 
-            }
-            catch (Exception ex)
-            {
-                Log.Error($"An error occurred during the test: {ex.Message}");
-                throw; 
-            }
         }
     }
 }

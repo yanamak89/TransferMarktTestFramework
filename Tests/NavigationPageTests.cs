@@ -17,8 +17,6 @@ public class NavigationPageTests : BaseTest
     [Test]
     public async Task NavigateToAllSections()
     {
-        try
-        {
             Log.Information("Starting test: NavigateToAllSections");
 
             await _navigationPage.NavigateToSection("Discover");
@@ -56,11 +54,5 @@ public class NavigationPageTests : BaseTest
             Log.Information("Navigated to Gaming section.");
 
             Log.Information("Test completed successfully: All sections navigated.");
-        }
-        catch (Exception ex)
-        {
-            Log.Error($"An error occurred during the test: {ex.Message}");
-            throw;
-        }
     }
 }
